@@ -17,6 +17,11 @@ app.use((req, res, next) => {
 app.use('/api', calculatorRoutes);
 app.use('/stocks', stockRoutes);
 
+// Get stock correlation - special route outside of /stocks/* to match the required URL pattern
+app.get('/stockcorrelation', async (req, res) => {
+    const stockController = require('./controllers/stockController');
+    await stockController.getStockCorrelation(req, res);
+});
 
 app.listen(PORT, () => {
     console.log(`Server running on http://localhost:${PORT}`);
