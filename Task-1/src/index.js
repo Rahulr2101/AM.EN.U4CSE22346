@@ -4,6 +4,7 @@ const PORT = 3000;
 
 
 const calculatorRoutes = require('./routes/calculatorRoutes');
+const stockRoutes = require('./routes/stockRoutes');
 
 app.use(express.json());
 app.use((req, res, next) => {
@@ -14,6 +15,7 @@ app.use((req, res, next) => {
 });
 
 app.use('/api', calculatorRoutes);
+app.use('/stocks', stockRoutes);
 
 
 app.listen(PORT, () => {
