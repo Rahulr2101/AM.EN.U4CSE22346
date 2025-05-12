@@ -4,6 +4,36 @@ function calculateAverage(values) {
     return sum / values.length;
 }
 
+function calculateStandardDeviation(values, mean) {
+    if (!values || values.length < 2) return 0;
+    
+    const avg = mean !== undefined ? mean : calculateAverage(values);
+    const squareDiffs = values.map(value => {
+        const diff = value - avg;
+        return diff * diff;
+    });
+    
+    const avgSquareDiff = calculateAverage(squareDiffs);
+    return Math.sqrt(avgSquareDiff);
+}
+
+function calculateCovariance(xValues, yValues, xMean, yMean) {
+    if (!xValues || !yValues || xValues.length !== yValues.length || xValues.length < 2) {
+        return 0;
+    }
+    
+    const n = xValues.length;
+    const xAvg = xMean !== undefined ? xMean : calculateAverage(xValues);
+    const yAvg = yMean !== undefined ? yMean : calculateAverage(yValues);
+    
+    let covariance = 0;
+    for (let i = 0; i < n; i++) {
+        covariance += (xValues[i] - xAvg) * (yValues[i] - yAvg);
+    }
+    
+    return covariance / (n - 1);
+}
+
 
 
 function calculateCorrelation(xValues, yValues) {
@@ -30,5 +60,7 @@ function calculateCorrelation(xValues, yValues) {
 
 module.exports = {
     calculateAverage,
-    calculateCorrelation
+    calculateCorrelation,
+    calculateStandardDeviation,
+    calculateCovariance,
 }; 
