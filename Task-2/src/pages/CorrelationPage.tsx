@@ -41,13 +41,26 @@ interface CorrelationResponse {
 }
 
 const TICKER_OPTIONS = [
-  { label: "Apple Inc.", value: "AAPL" },
-  { label: "Microsoft Corporation", value: "MSFT" },
+  { label: "Advanced Micro Devices, Inc.", value: "AMD" },
   { label: "Alphabet Inc. Class A", value: "GOOGL" },
+  { label: "Alphabet Inc. Class C", value: "GOOG" },
   { label: "Amazon.com, Inc.", value: "AMZN" },
-  { label: "NVIDIA Corporation", value: "NVDA" },
-  { label: "Tesla, Inc.", value: "TSLA" },
+  { label: "Amgen Inc.", value: "AMGN" },
+  { label: "Apple Inc.", value: "AAPL" },
+  { label: "Berkshire Hathaway Inc.", value: "BRKB" },
+  { label: "Booking Holdings Inc.", value: "BKNG" },
+  { label: "Broadcom Inc.", value: "AVGO" },
+  { label: "CSX Corporation", value: "CSX" },
+  { label: "Eli Lilly and Company", value: "LLY" },
+  { label: "Marriott International, Inc.", value: "MAR" },
+  { label: "Marvell Technology, Inc.", value: "MRVL" },
+  { label: "Meta Platforms, Inc.", value: "META" },
+  { label: "Microsoft Corporation", value: "MSFT" },
+  { label: "Nvidia Corporation", value: "NVDA" },
   { label: "PayPal Holdings, Inc.", value: "PYPL" },
+  { label: "TSMC", value: "2330TW" },
+  { label: "Tesla, Inc.", value: "TSLA" },
+  { label: "Visa Inc.", value: "V" },
 ];
 
 const TIME_OPTIONS = [
